@@ -1,34 +1,37 @@
+package holapapusestoyusandoeclipseporquenomegustaapche;
+
 import java.util.Scanner;
 
-/*Desarrolle un programa donde el usuario ingresa cuatro valores. El programa muestra el 
-  resultado de multiplicar el primero por el tercero y el resultado de sumar el segundo al cuarto. */
+/*
+ * Se pide crear un programa para determinar si un triángulo es isósceles, escaleno o 
+equilátero.
 
+USANDO ESTA IMAGEN SIN QUE LOS VALORES SEAN DESORDENADOS ES COMO EL CODIGO HECHO:
+https://cdn.diferenciador.com/imagenes/tipos-de-triangulos-segun-lados-cke.jpg
+ */
 public class problema3 {
 	public static void main(String[] args) {
-		
-		Scanner scan = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
-		double a;
-		double x;
-		double b;
-		double y;
-		double multiplicacion;
-		double suma;
-		
-		System.out.println("Ingrece el primer valor:");
-		a = scan.nextDouble();
-		System.out.println("Ingrece el segundo valor:");
-		x = scan.nextDouble();
-		System.out.println("Ingrece el tercer valor:");
-		b = scan.nextDouble();
-		System.out.println("Ingrece el cuarto valor:");
-		y = scan.nextDouble();
-		
-		multiplicacion = (a * b);
-		suma = (x + y);
-		
-		System.out.println("El programa muestra el resultado de multiplicar el primero por el tercero y el resultado de sumar el segundo al cuarto.");
-		System.out.println("El resultado de la multiplicacion es: "+multiplicacion);
-		System.out.println("El resultado de la suma es: "+suma);
+		int a;
+		int b;
+		int c;
+
+		System.out.println("Ingresa los 3 lados de un equilatero para saber si es isósceles, escaleno o equilátero");
+		System.out.println("Valor 1: ");
+		a = scanner.nextInt();
+		System.out.println("Valor 2: ");
+		b = scanner.nextInt();
+		System.out.println("Valor 3: ");
+		c = scanner.nextInt();
+
+		if (a == b & a != c) {
+			System.out.println("Es isoseles.");
+		} else if (a == b & b == c) {
+			System.out.println("El equilatero.");
+		} else {
+			System.out.println("Es escaleno.");
+		}
+		scanner.close();
 	}
 }

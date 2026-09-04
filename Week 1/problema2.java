@@ -1,37 +1,42 @@
+package holapapusestoyusandoeclipseporquenomegustaapche;
+
 import java.util.Scanner;
+
 /*
-Antes de que se promulgara el racionamiento de energía, casi nadie hablaba en kilowatts; 
-pero ahora todos han incorporado esa palabra a su vocabulario. Sabiendo que 100 kilowatts 
-de energía cuestan una séptima parte del salario mínimo, cree un algoritmo que reciba el 
-valor del salario mínimo y la cantidad de kilowatts gastados por una residencia y calcule:
-• El valor en soles de cada kilowatt.
-• El valor en soles a pagar.
-• El nuevo valor que pagar por la residencia con un descuento del 10%.
-*/
+En un supermercado se hace una promoción, mediante la cual el cliente obtiene un 
+descuento dependiendo de un número que se escoge al azar, siempre y cuando el monto 
+de compra supere un monto establecido por gerencia todos los días. Si el número escogido 
+es menor que 74 el descuento es del 15% sobre el monto de la compra, si es mayor o igual 
+a 74 el descuento es del 20%. Obtener cuánto dinero se le descuenta
+ */
 public class problema2 {
-	public static void main (String[] args){
-		
-		Scanner scan = new Scanner(System.in);
-		
-		double kilowatt;
-		double valorkilowatt;
-		double sueldominimo;
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		double x;
+		double dinero;
 		double descuento;
-		double recibobruto;
-		double recibo;
-		
-		sueldominimo = 1130.0;
-		valorkilowatt = ((1.0/7.0) * sueldominimo)/100.0;
-		
-		
-		System.out.println("El sueldo minimo en Perú: "+ sueldominimo);
-		System.out.println("El valor por 1 KiloWatt es de "+valorkilowatt+ " soles.");
-		System.out.println("Ingrese el consumo de kilowatts:");
-		kilowatt = scan.nextDouble();
-		recibobruto = (kilowatt * valorkilowatt);
-		System.out.println("Tu consumo en soles es: "+ recibobruto);
-		descuento = (recibobruto / 10.0);
-		recibo = recibobruto - descuento;
-		System.out.println("Tienes un descuento del 10% asi que el valor total de tu recibo es: "+ recibo);
+		double f;
+		x = 74;
+
+		System.out.println("Ingresa lo que gastaste: ");
+		dinero = scanner.nextInt();
+
+		System.out.println("PROMOCIONES, HAZ SIDO SELECCIONADO PARA UN DESCUENTO UNICO!");
+		System.out.println(
+				"Si tu numero es entre el 1 al 71 tendras un descuetno del 15%, y si es de 72 al 100 tendras 20%.");
+
+		if (x < 74) {
+			System.out.println("Tienes un decuento del 15%");
+			descuento = (dinero * 0.15);
+		} else {
+			System.out.println("Tienes un descuento del 20%");
+			descuento = (dinero * 0.2);
+		}
+
+		f = dinero - descuento;
+
+		System.out.println("Finalmente, pagas un monto de " + f + " soles.");
+		scanner.close();
 	}
 }
